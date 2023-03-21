@@ -9,7 +9,6 @@ import { AppError, HttpCode } from "./error/AppError";
 // @ts-ignore
 import xss from "xss-clean";
 import cors from "cors";
-import "dotenv/config";
 const app: Express = express();
 app.enable("trust proxy");
 app.use(express.json());

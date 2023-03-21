@@ -5,15 +5,13 @@ import { createHttpTerminator } from "http-terminator";
 import "dotenv/config";
 import { exitHandler } from "./serverExit";
 import config from "../config/config";
-const port: number | string = process.env.PORT || 4000;
+const port: number | string = config.PORT || 4000;
 const uri: string = config.DATABASE || "";
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  dbName: "new db ",
+  dbName: "Nearby",
 };
-
-//connet to mongoDB
 mongoose.set("strictQuery", true);
 mongoose
   .connect(uri, options)

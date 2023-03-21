@@ -1,4 +1,5 @@
 import morgan, { StreamOptions } from "morgan";
+import config from "../config/config";
 
 import Logger from "../logger/logger";
 
@@ -7,7 +8,7 @@ const stream: StreamOptions = {
 };
 
 const skip = () => {
-  const env = process.env.NODE_ENV || "development";
+  const env = config.NODE_ENV || "development";
   return env !== "development";
 };
 
